@@ -1,0 +1,129 @@
+/* 
+    Fernando Carvalho de Souza
+    Fcarvalhodesouz1115@conestogac.on.ca
+    #8911115 
+*/
+
+
+
+body{
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.headfoot{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.menu{
+    flex: 1;
+}
+
+.btnProduct{
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.bag{
+    flex: 0 0 25%;
+    padding: 1em;
+    background-color: #f2f2f2;
+}
+
+#bagList{
+    list-style: disc;
+    padding: 5;
+}
+
+dialog{
+    border:none;
+    padding: 1em;
+    background-color: #f2f2f2;
+}
+
+dialog h2{
+    text-align: center;
+}
+
+.btnDialog{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.btnQty{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+p.btnContainer{
+    text-align: center;
+}
+
+input#qty{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button.btnBag{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#customerName{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 80%
+}
+
+button:hover{
+    background-color: #45a049;
+    color: yellow;
+}

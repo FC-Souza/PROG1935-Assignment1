@@ -1,0 +1,104 @@
+<!--
+    Fernando Carvalho de Souza
+    Fcarvalhodesouz1115@conestogac.on.ca
+    #8911115
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lazy Coffee webpage">
+    <meta name="keywords" content="coffee, cafe, lazy, cafeteria, lazy dog, dog">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script type="text/javascript" src="script/script.js"></script>
+    <title>Lazy Dog Coffee</title>
+</head>
+<body>
+    <header class="headfoot">
+        <h1>Lazy Dog Coffee</h1>
+    </header>
+
+    <main>
+        <section class="menu">
+            <button class="btnProduct" onclick="showPopupQty('Espresso', 3.35)">Espresso - $3.35</button>
+            <button class="btnProduct" onclick="showPopupQty('Drip Coffee', 2.75)">Drip Coffee - $2.75</button>
+            <button class="btnProduct" onclick="showPopupQty('Mocha', 4.75)">Mocha - $4.75</button>
+            <button class="btnProduct" onclick="showPopupQty('Latte', 4.50)">Latte - $4.50</button>
+            <button class="btnProduct" onclick="showPopupQty('Americano', 3.50)">Americano - $3.50</button>
+            <button class="btnProduct" onclick="showPopupQty('Cappuccino', 4.25)">Cappuccino - $4.25</button>
+            <button class="btnProduct" onclick="showPopupQty('Machiato', 3.50)">Machiato - $3.50</button>
+        </section>
+
+        <aside class="bag">
+            <h2>Shopping Bag</h2>
+            <ul id="bagList"></ul>
+            <br>
+            <p>SubTotal: $<span id="total">0.00</span></p>
+            <p>Tax HST: $<span id="taxHST">0.00</span></p>
+            <p>Total + HST: $<span id="totalplustax">0.00</span></p>
+            <button class="btnBag" onclick="showPopupName()">Checkout</button>
+            <button class="btnBag" onclick="resetShoppingBag()">Clear Bag</button>
+        </aside>
+    </main>
+
+    <!-- Show the popUp to input the Quantity
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog -->
+    <dialog id="popupqty">
+        <form method="dialog">
+            <h2>Insert the quantity</h2>
+                <!-- Minimun 1. Default value 1 -->
+                <!-- Using readonly  to block user input. User can only use the '+' and '-' buttons -->
+                <!-- <input type="number" id="qty" value="1" min="1"> -->
+                <input type="number" id="qty" value="1" min="1" readonly> 
+                <br>
+            <p class="btnContainer">
+                <!-- Buttons to decrease and increase qty -->
+                <!-- Added the type="button", because by default the buttons are Submit -->
+                <button type="button" class="btnQty" onclick="decQty()">-</button>
+                <button type="button" class="btnQty" onclick="incQty()">+</button>
+            </p>
+            <br>
+            <!-- Button to call the function addToBag -->
+            <button class="btnDialog" onclick="addToBag()">Add to Bag</button>
+        </form>
+    </dialog>
+
+    <!-- Show the popUp to input the nasme -->
+    <dialog id="popupName">
+        <form method="dialog">
+                <h2>Insert your name to proceed the checkout</h2>
+                <br>
+                <input type="text" id="customerName" placeholder="">
+            </p>
+            <br>
+            <button class="btnDialog" onclick="getName()">Proceed</button>
+        </form>
+    </dialog>
+
+    <!-- Show the poopUp for the Receipt-->
+    <dialog id="popupReceipt">
+        <h2>Receipt</h2>
+        <h3 id="msgReceipt"></h3>
+        <br>
+        <p>Product List:</p>
+        <ul id="receiptList"></ul>
+        <br>
+        <!-- <p>SubTotal: $<span id="total">0.00</span></p>
+        <p>Tax HST: $<span id="taxHST">0.00</span></p>
+        <p>Total + HST: $<span id="totalPlusTax">0.00</span></p> -->
+        <p>SubTotal: $<span id="receiptTotal">0.00</span></p>
+        <p>Tax HST: $<span id="receiptTaxHST">0.00</span></p>
+        <p>Total + HST: $<span id="receiptTotalPlusTax">0.00</span></p>
+
+
+        <button class="btnDialog" onclick="closePopupReceipt()">Close</button>
+    </dialog>
+    
+    <footer class="headfoot">
+        <p>&copy;Fernando Carvalho de Souza 2024</p>
+    </footer>    
+
+</body>
+</html>
